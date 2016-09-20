@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "login")
 public class LoginRestController {
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.POST)
+	@ResponseBody
 	@ResponseStatus(value = HttpStatus.OK)
 	public void login(HttpServletResponse response, @RequestBody String login, @RequestBody String senha) {
 		if (login.equals("freela") && senha.equals("freela321")) {

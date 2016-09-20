@@ -16,14 +16,14 @@
 	<load-on-startup>1</load-on-startup>
 </servlet>
 
-<servlet-mapping>
-	<servlet-name>dispatcher</servlet-name>
-	<url-pattern>/</url-pattern>
-</servlet-mapping>
+<!-- <servlet-mapping> -->
+<!-- 	<servlet-name>dispatcher</servlet-name> -->
+<!-- 	<url-pattern>/</url-pattern> -->
+<!-- </servlet-mapping> -->
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/dispatcher-servlet.xml</param-value>
+		<param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
 	</context-param>
 
 <listener>
@@ -42,8 +42,8 @@
  
 <!-- E agora estou falando que o servlet que criamos lá em cima (learning-spring) 
     será o responsável por cuidar todas as chamadas que bater em /rest/* -->
-<!-- <servlet-mapping> -->
-<!--     <servlet-name>spring-mvc</servlet-name> -->
-<!--     <url-pattern>/rest/*</url-pattern> -->
-<!-- </servlet-mapping> -->
+<servlet-mapping>
+    <servlet-name>dispatcher</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+</servlet-mapping>
 </web-app>

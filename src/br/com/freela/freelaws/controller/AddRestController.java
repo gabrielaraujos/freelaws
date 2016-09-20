@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,23 +14,26 @@ import br.com.freela.freelaws.model.Oportunidade;
 
 @RestController
 @RequestMapping(value = "add")
-public class CadastroRestController {
-	@RequestMapping(value = "freelancer", method = RequestMethod.POST)
+public class AddRestController {
+	@RequestMapping(value = "{freelancer}", method = RequestMethod.POST)
+	@ResponseBody
 	@ResponseStatus(value = HttpStatus.CREATED)
-	private void cadastrarFreelancer(@RequestBody Freelancer freelancer) {
+	private void addFreelancer(@RequestBody Freelancer freelancer) {
 		// insere freelancer na bd
 	}
 
-	@RequestMapping(value = "empresa", method = RequestMethod.POST)
+	@RequestMapping(value = "{empresa}", method = RequestMethod.POST)
+	@ResponseBody
 	@ResponseStatus(value = HttpStatus.CREATED)
-	private void cadastrarFreelancer(@RequestBody Empresa empresa) {
+	private void addEmpresa(@RequestBody Empresa empresa) {
 		// insere empresa na bd
 	}
 
 	// cadastrar oportunidade
-	@RequestMapping(value = "oportunidade", method = RequestMethod.POST)
+	@RequestMapping(value = "{oportunidade}", method = RequestMethod.POST)
+	@ResponseBody
 	@ResponseStatus(value = HttpStatus.CREATED)
-	private void cadastrarOportnidade(@RequestBody Oportunidade oportunidade) {
+	private void addOportunidade(@RequestBody Oportunidade oportunidade) {
 		// insere oportunidade na bd
 	}
 }
