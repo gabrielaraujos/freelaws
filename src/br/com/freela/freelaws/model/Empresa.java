@@ -1,18 +1,14 @@
 package br.com.freela.freelaws.model;
 
-public class Empresa {
+import java.io.Serializable;
+
+public class Empresa extends Model implements Serializable {
+
+	private static final long serialVersionUID = -6629723272022240362L;
+
 	private String nome;
 	private String email;
 	private String senha;
-
-	public Empresa() {
-	}
-
-	public Empresa(String nome, String email, String senha) {
-		this.nome = nome;
-		this.email = email;
-		this.senha = senha;
-	}
 
 	public String getNome() {
 		return nome;
