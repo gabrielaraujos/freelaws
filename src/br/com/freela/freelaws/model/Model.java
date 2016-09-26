@@ -2,18 +2,13 @@ package br.com.freela.freelaws.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
+//@Entity
 public class Model implements Serializable {
 
 	private static final long serialVersionUID = -7044623687556959329L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	// @Id
+	// @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	public Long getId() {

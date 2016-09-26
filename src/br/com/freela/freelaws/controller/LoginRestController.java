@@ -19,9 +19,11 @@ public class LoginRestController {
 	@ResponseStatus(value = HttpStatus.OK)
 	public void login(HttpServletResponse response, @RequestBody String login, @RequestBody String senha) {
 		if (login.equals("freela") && senha.equals("freela321")) {
-			response.setStatus(HttpStatus.NOT_FOUND.value());
-		} else {
 			response.setStatus(HttpStatus.OK.value());
+			System.out.println("Logado!");
+		} else {
+			response.setStatus(HttpStatus.NOT_FOUND.value());
+			System.out.println("Usuário não encontrado");
 		}
 	}
 

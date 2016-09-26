@@ -10,14 +10,16 @@
 					http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
 					http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
  
-	<context:component-scan base-package="br.com.freela.freelaws.controller"/>
- 
+	<mvc:annotation-driven />
 	
-	<!--  esse arquivo é responsável por todas as configurações da mvc -->
-	<context:component-scan base-package="br.com.freela.freelaws" />
+<!-- 	<context:component-scan base-package="br.com.freela.freelaws.service.*" /> -->
+<!-- 	<context:component-scan base-package="br.com.freela.freelaws.service.impl.*" /> -->
+<!-- 	<context:component-scan base-package="br.com.freela.freelaws.dao.*" /> -->
+<!-- 	<context:component-scan base-package="br.com.freela.freelaws.dao.impl.*" /> -->
+	<context:component-scan base-package="br.com.freela.freelaws.**"/>
      
 	<!-- Diz ao spring que as configurações dos beans serão orientadas a anotações -->
-	<mvc:annotation-driven />
+	
 	
 		<beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<beans:property name="messageConverters">
@@ -29,8 +31,8 @@
 	
 	<!-- Configure bean to convert JSON to POJO and vice versa -->
 	<beans:bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-	</beans:bean>	
-	
+	</beans:bean>
+		
 <!-- 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
 		
 <!-- 		<property name="prefix"> -->

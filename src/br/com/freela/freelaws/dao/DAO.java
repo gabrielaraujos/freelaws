@@ -2,10 +2,9 @@ package br.com.freela.freelaws.dao;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-
-public interface Dao {
-	public EntityManager getEntityManager();
+//@Repository
+public interface DAO {
+	// public EntityManager getEntityManager();
 
 	public List<Object> pesquisarTodos();
 

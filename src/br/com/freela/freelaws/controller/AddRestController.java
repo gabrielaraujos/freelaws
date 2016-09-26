@@ -15,25 +15,31 @@ import br.com.freela.freelaws.model.Oportunidade;
 @RestController
 @RequestMapping(value = "add")
 public class AddRestController {
-	@RequestMapping(value = "{freelancer}", method = RequestMethod.POST)
+	// @Autowired
+	// AddService addService;
+
+	@RequestMapping(value = "freelancer", method = RequestMethod.POST)
 	@ResponseBody
 	@ResponseStatus(value = HttpStatus.CREATED)
-	private void addFreelancer(@RequestBody Freelancer freelancer) {
-		// insere freelancer na bd
+	public void addFreelancer(@RequestBody Freelancer freelancer) {
+		// addService.addFreelancer(freelancer);
+		System.out.println("Freelancer cadastrado");
 	}
 
-	@RequestMapping(value = "{empresa}", method = RequestMethod.POST)
+	@RequestMapping(value = "empresa", method = RequestMethod.POST)
 	@ResponseBody
 	@ResponseStatus(value = HttpStatus.CREATED)
-	private void addEmpresa(@RequestBody Empresa empresa) {
-		// insere empresa na bd
+	public void addEmpresa(@RequestBody Empresa empresa) {
+		// addService.addEmpresa(empresa);
+		System.out.println("Empresa cadastrado");
 	}
 
 	// cadastrar oportunidade
-	@RequestMapping(value = "{oportunidade}", method = RequestMethod.POST)
+	@RequestMapping(value = "oportunidade", method = RequestMethod.POST)
 	@ResponseBody
 	@ResponseStatus(value = HttpStatus.CREATED)
-	private void addOportunidade(@RequestBody Oportunidade oportunidade) {
+	public void addOportunidade(@RequestBody Oportunidade oportunidade) {
 		// insere oportunidade na bd
+		System.out.println("Oportunidade adicionada");
 	}
 }
