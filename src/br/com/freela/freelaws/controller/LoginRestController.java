@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.freela.freelaws.model.Usuario;
+
 @RestController
 @RequestMapping(value = "login")
 public class LoginRestController {
@@ -17,8 +19,8 @@ public class LoginRestController {
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
 	@ResponseStatus(value = HttpStatus.OK)
-	public void login(HttpServletResponse response, @RequestBody String login, @RequestBody String senha) {
-		if (login.equals("freela") && senha.equals("freela321")) {
+	public void login(HttpServletResponse response, @RequestBody Usuario usuario) {
+		if (usuario.getEmail().equals("freela@email.com") && usuario.getSenha().equals("freela321")) {
 			response.setStatus(HttpStatus.OK.value());
 			System.out.println("Logado!");
 		} else {
