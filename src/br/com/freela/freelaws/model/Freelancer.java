@@ -3,7 +3,7 @@ package br.com.freela.freelaws.model;
 import java.io.Serializable;
 
 //@Entity
-public class Freelancer extends Model implements Serializable {
+public class Freelancer extends Usuario implements Serializable {
 
 	private static final long serialVersionUID = 3914652452707342886L;
 

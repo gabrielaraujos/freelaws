@@ -3,9 +3,11 @@ package br.com.freela.freelaws.dao.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import br.com.freela.freelaws.dao.DAO;
 
-//@Component
+@Component
 public class DAOImpl implements DAO, Serializable {
 
 	private static final long serialVersionUID = -2885634253192889487L;
