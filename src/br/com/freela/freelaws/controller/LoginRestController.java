@@ -17,16 +17,19 @@ import br.com.freela.freelaws.model.Usuario;
 public class LoginRestController {
 
 	@RequestMapping(method = RequestMethod.POST)
-	@ResponseBody
 	@ResponseStatus(value = HttpStatus.OK)
-	public void login(HttpServletResponse response, @RequestBody Usuario usuario) {
+	public @ResponseBody Usuario login(HttpServletResponse response, @RequestBody Usuario usuario) {
 		if (usuario.getEmail().equals("freela@email.com") && usuario.getSenha().equals("freela321")) {
 			response.setStatus(HttpStatus.OK.value());
 			System.out.println("Logado!");
 		} else {
 			response.setStatus(HttpStatus.NOT_FOUND.value());
+			usuario = null;
+
 			System.out.println("Usuário não encontrado");
 		}
+
+		return usuario;
 	}
 
 }
