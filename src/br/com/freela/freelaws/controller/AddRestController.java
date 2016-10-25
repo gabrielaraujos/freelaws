@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.freela.freelaws.model.Empresa;
 import br.com.freela.freelaws.model.Freelancer;
 import br.com.freela.freelaws.model.Oportunidade;
+import br.com.freela.freelaws.model.Usuario;
 
 @RestController
 @RequestMapping(value = "add")
@@ -19,27 +20,46 @@ public class AddRestController {
 	// AddService addService;
 
 	@RequestMapping(value = "freelancer", method = RequestMethod.POST)
-	@ResponseBody
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public void addFreelancer(@RequestBody Freelancer freelancer) {
-		// addService.addFreelancer(freelancer);
-		System.out.println("Freelancer cadastrado");
+	public @ResponseBody Usuario addFreelancer(@RequestBody Freelancer freelancer) {
+		try {
+			// addService.addFreelancer(freelancer);
+			freelancer.setId(1L);
+
+			System.out.println("Usuário cadastrado");
+			return freelancer;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 	@RequestMapping(value = "empresa", method = RequestMethod.POST)
-	@ResponseBody
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public void addEmpresa(@RequestBody Empresa empresa) {
-		// addService.addEmpresa(empresa);
-		System.out.println("Empresa cadastrado");
+	public @ResponseBody Usuario addEmpresa(@RequestBody Empresa empresa) {
+		try { // addService.addEmpresa(empresa);
+			System.out.println("Usuário cadastrado");
+
+			empresa.setId(1L);
+
+			return empresa;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 	// cadastrar oportunidade
 	@RequestMapping(value = "oportunidade", method = RequestMethod.POST)
-	@ResponseBody
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public void addOportunidade(@RequestBody Oportunidade oportunidade) {
-		// insere oportunidade na bd
-		System.out.println("Oportunidade adicionada");
+	public @ResponseBody Oportunidade addOportunidade(@RequestBody Oportunidade oportunidade) {
+		try {
+			// insere oportunidade na bd
+			System.out.println("Oportunidade adicionada");
+
+			oportunidade.setId(1L);
+
+			return oportunidade;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }

@@ -2,36 +2,46 @@ package br.com.freela.freelaws.model;
 
 import java.io.Serializable;
 
+import br.com.freela.freelaws.enums.Setor;
+import br.com.freela.freelaws.enums.TipoEmpresa;
+
 public class Empresa extends Usuario implements Serializable {
 
 	private static final long serialVersionUID = -6629723272022240362L;
+	private String especializacoes;
+	private String site;
+	private Setor setor;
+	private TipoEmpresa tipo;
 
-	private String nome;
-	private String email;
-	private String senha;
-
-	public String getNome() {
-		return nome;
+	public String getEspecializacoes() {
+		return especializacoes;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setEspecializacoes(String especializacoes) {
+		this.especializacoes = especializacoes;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getSite() {
+		return site;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setSite(String site) {
+		this.site = site;
 	}
 
-	public String getSenha() {
-		return senha;
+	public Setor getSetor() {
+		return setor;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setSetor(Setor setor) {
+		this.setor = setor;
 	}
 
+	public TipoEmpresa getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoEmpresa tipo) {
+		this.tipo = tipo;
+	}
 }
