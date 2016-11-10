@@ -11,6 +11,15 @@ public class Localizacao extends Model implements Serializable {
 	private Cidade cidade;
 	private Estado estado;
 
+	public Localizacao(Pais pais, Cidade cidade, Estado estado) {
+		this.pais = pais;
+		this.cidade = cidade;
+		this.estado = estado;
+	}
+
+	public Localizacao() {
+	}
+
 	public Pais getPais() {
 		return pais;
 	}

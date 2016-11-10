@@ -1,5 +1,8 @@
 package br.com.freela.freelaws.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,21 +19,29 @@ import br.com.freela.freelaws.model.Usuario;
 @RestController
 @RequestMapping(value = "add")
 public class AddRestController {
-	// @Autowired
-	// AddService addService;
 
 	@RequestMapping(value = "freelancer", method = RequestMethod.POST)
-	@ResponseStatus(value = HttpStatus.CREATED)
-	public @ResponseBody Usuario addFreelancer(@RequestBody Freelancer freelancer) {
+	@ResponseStatus(value = HttpStatus.OK)
+	public @ResponseBody Map<String, Object> addFreelancer(@RequestBody Freelancer freelancer) {
+
+		Map<String, Object> resultado = new HashMap<>();
+
 		try {
-			// addService.addFreelancer(freelancer);
+
 			freelancer.setId(1L);
 
 			System.out.println("Usuário cadastrado");
-			return freelancer;
+
+			resultado.put("usuario", freelancer);
+
+			return resultado;
+
 		} catch (Exception e) {
+
 			return null;
+
 		}
+
 	}
 
 	@RequestMapping(value = "empresa", method = RequestMethod.POST)

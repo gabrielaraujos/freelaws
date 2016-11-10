@@ -11,4 +11,28 @@ public class Freelancer extends Usuario implements Serializable {
 	private List<Curso> formacao;
 	private List<Idioma> idiomas;
 
+	public String getProfissao() {
+		return profissao;
+	}
+
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
+	}
+
+	public List<Curso> getFormacao() {
+		return formacao;
+	}
+
+	public void setFormacao(List<Curso> formacao) {
+		this.formacao = formacao;
+	}
+
+	public List<Idioma> getIdiomas() {
+		return idiomas;
+	}
+
+	public void setIdiomas(List<Idioma> idiomas) {
+		this.idiomas = idiomas;
+	}
+
 }

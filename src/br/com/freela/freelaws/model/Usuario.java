@@ -2,10 +2,13 @@ package br.com.freela.freelaws.model;
 
 import java.io.Serializable;
 
+import br.com.freela.freelaws.enums.Papel;
+
 public class Usuario extends Model implements Serializable {
 	private String email;
 	private String senha;
 	private String nome;
+	private Papel papel;
 	private Localizacao localizacao;
 
 	public String getEmail() {
@@ -38,6 +41,14 @@ public class Usuario extends Model implements Serializable {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public Integer getPapel() {
+		return papel.getId();
+	}
+
+	public void setPapel(Papel papel) {
+		this.papel = papel;
 	}
 
 }
