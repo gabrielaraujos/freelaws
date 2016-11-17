@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.freela.freelaws.enums.Papel;
+import br.com.freela.freelaws.model.Credenciais;
 import br.com.freela.freelaws.model.Usuario;
 
 @RestController
@@ -20,17 +21,19 @@ public class LoginRestController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(value = HttpStatus.OK)
-	public @ResponseBody Map<String, Object> login(@RequestBody Usuario usuario) {
+	public @ResponseBody Map<String, Object> login(@RequestBody Credenciais credenciais) {
 
 		Map<String, Object> resultado = new HashMap<>();
 
 		try {
 
-			if (usuario.getEmail().equals("freela@email.com") && usuario.getSenha().equals("freela321")) {
+			if (credenciais.getLogin().equals("gabriel@email.com") && credenciais.getSenha().equals("freela")) {
 
 				System.out.println("Logado!");
 
-				usuario.setId(1L);
+				Usuario usuario = new Usuario();
+
+				// usuario.setId(1L);
 				usuario.setNome("Freela");
 				usuario.setPapel(Papel.FREELANCER);
 
